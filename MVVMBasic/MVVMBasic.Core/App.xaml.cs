@@ -8,7 +8,7 @@ namespace MVVMBasic
         {
             InitializeComponent();
 
-            MainPage = new MVVMBasicPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

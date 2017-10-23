@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:MVVMBasic"
     xmlns:viewmodel="clr-namespace:MVVMBasic.ViewModels"
-    xmlns:helpers="clr-namespace:MVVMBasic.Helpers"
+    xmlns:navigation="clr-namespace:MVVMBasic.Navigations"
     xmlns:repoServices="clr-namespace:CommonRepository.Services;assembly=CommonRepository"
     xmlns:behaviors="clr-namespace:MVVMBasic.Behaviors"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
@@ -14,7 +14,7 @@
             <!-- Passing Argiments  -->
             <x:Arguments>
                 <repoServices:UserService />
-                <helpers:NavigationService />
+                <navigation:NavigationService />
             </x:Arguments>
         </viewmodel:MainPageViewModel>
     </ContentPage.BindingContext>

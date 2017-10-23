@@ -2,17 +2,30 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using CommonRepository.Models;
+using Prism.Mvvm;
+using Prism.Navigation;
 
-namespace MVVMBasic.ViewModels
+namespace MVVMWithPrism.ViewModels
 {
-    public class DetailPageViewModel : INotifyPropertyChanged
+    /// <summary>
+    /// DetailPage.xaml 페이지와 연결된 DetailPageViewModel class 
+    /// </summary>
+    /// <remarks>
+    /// 회원 리스트 페이지에서 사용되는 ViewModel
+    /// Prism 참조 
+    /// https://github.com/PrismLibrary/Prism/tree/master/docs/Xamarin-Forms
+    /// </remarks>
+    public class DetailPageViewModel : BaseViewModel
     {
         #region Private Fields Area
         private User _user;
         #endregion
+
+        #region Constructor
         public DetailPageViewModel()
         {
         }
+        #endregion
 
         #region Property Area
         public User User
@@ -23,19 +36,20 @@ namespace MVVMBasic.ViewModels
             }
             set
             {
-                _user = value;
-                OnPropertyChanged();
+                SetProperty(ref _user, value);
             }
         }
         #endregion
 
-        #region INotifiPropertyChanged Implement
-        public event PropertyChangedEventHandler PropertyChanged;
+        #region Override VaseViewMode INavagationAware 인터페이스
 
-        protected void OnPropertyChanged([CallerMemberName]string propertyName = "")
+        public override void OnNavigatingTo(NavigationParameters parameters)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (parameters.ContainsKey("user"))
+                User = (User)parameters["user"];
         }
+
         #endregion
+
     }
 }

@@ -4,7 +4,7 @@ using MVVMBasic.Interfaces;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 
-namespace MVVMBasic.Helpers
+namespace MVVMBasic.Navigations
 {
     /// <summary>
     /// 간단한 네비게이션 구현

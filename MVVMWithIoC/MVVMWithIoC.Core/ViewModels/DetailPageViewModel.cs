@@ -1,11 +1,8 @@
-﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using CommonRepository.Models;
+﻿using CommonRepository.Models;
 
 namespace MVVMWithIoC.ViewModels
 {
-    public class DetailPageViewModel : INotifyPropertyChanged
+    public class DetailPageViewModel : BaseViewModel
     {
         #region Private Fields Area
         private User _user;
@@ -23,18 +20,8 @@ namespace MVVMWithIoC.ViewModels
             }
             set
             {
-                _user = value;
-                OnPropertyChanged();
+                SetProperty(ref _user, value);
             }
-        }
-        #endregion
-
-        #region INotifiPropertyChanged Implement
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName]string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
     }

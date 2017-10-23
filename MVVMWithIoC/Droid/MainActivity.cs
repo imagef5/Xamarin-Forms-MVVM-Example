@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using FFImageLoading.Forms.Droid;
 
 namespace MVVMWithIoC.Droid
 {
@@ -19,6 +20,9 @@ namespace MVVMWithIoC.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
+
+            //FFImageLoading 초기화
+            CachedImageRenderer.Init();
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 

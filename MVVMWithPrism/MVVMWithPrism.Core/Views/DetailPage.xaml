@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
     prism:ViewModelLocator.AutowireViewModel="True" 
-    x:Class="MVVMWithPrism.Pages.DetailPage"
+    x:Class="MVVMWithPrism.Views.DetailPage"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     <ContentPage.Content>
         <Grid Padding="20,40,20,20" ColumnSpacing="10" RowSpacing="20">

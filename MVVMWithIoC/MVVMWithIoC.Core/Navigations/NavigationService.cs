@@ -3,7 +3,7 @@ using Xamarin.Forms;
 using System.Threading.Tasks;
 using MVVMWithIoC.Interfaces;
 
-namespace MVVMWithIoC.Helpers
+namespace MVVMWithIoC.Navigations
 {
     /// <summary>
     /// 간단한 네비게이션 구현

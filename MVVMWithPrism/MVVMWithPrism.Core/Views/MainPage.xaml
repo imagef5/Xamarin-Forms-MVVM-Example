@@ -4,7 +4,7 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
     prism:ViewModelLocator.AutowireViewModel="True" 
     xmlns:prismbehabors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
-    x:Class="MVVMWithPrism.Pages.MainPage" 
+    x:Class="MVVMWithPrism.Views.MainPage" 
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     Title="MainPage">
 	<Grid Padding="20,40,20,20" ColumnSpacing="10" RowSpacing="20">

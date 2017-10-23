@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using FFImageLoading.Forms.Droid;
 
 namespace MVVMBasic.Droid
 {
@@ -21,6 +22,9 @@ namespace MVVMBasic.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            //FFImageLoading 초기화
+            CachedImageRenderer.Init();
 
             LoadApplication(new App());
         }

@@ -1,5 +1,29 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MVVMWithIoC.Views.DetailPage">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="MVVMWithIoC.Views.DetailPage"
+    BindingContext="{Binding DetailPageViewModel, Source={StaticResource Locator}}">
 	<ContentPage.Content>
-	</ContentPage.Content>
+        <Grid Padding="20,40,20,20" ColumnSpacing="10" RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+             </Grid.RowDefinitions>
+            <Label Text="유저 상세 정보 예제" VerticalOptions="Center" HorizontalOptions="Center" />
+            <ScrollView Grid.Row="1">
+                <StackLayout Padding="10">
+                    <ffimageloading:CachedImage 
+                            HeightRequest="200"
+                            WidthRequest="200"
+                            HorizontalOptions="CenterAndExpand"
+                            Aspect="AspectFill"
+                            Source="{Binding User.Picture}"/>
+                    <Label Text="{Binding User.FirstName}" FontAttributes="Bold"/>
+                    <Label Text="{Binding User.Email}" FontSize="Micro"/>
+                    <Label Text="{Binding User.Address.City}" FontSize="Large"/>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

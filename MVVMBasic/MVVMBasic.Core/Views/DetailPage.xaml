@@ -2,7 +2,7 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="MVVMBasic.Pages.DetailPage"
+    x:Class="MVVMBasic.Views.DetailPage"
     xmlns:viewmodel="clr-namespace:MVVMBasic.ViewModels"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     <ContentPage.BindingContext>

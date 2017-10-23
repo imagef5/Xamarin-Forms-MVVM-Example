@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace MVVMWithPrism.Pages
+namespace MVVMWithPrism.Views
 {
     public partial class MainPage : ContentPage
     {

@@ -2,18 +2,46 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-win+net45+wp8+win81+wpa8</PackageTargetFallback>
   </PropertyGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
-    <EmbeddedResource Include="MVVMWithIoCPage.xaml" />
+    <EmbeddedResource Include="Views\MainPage.xaml" />
+    <EmbeddedResource Include="Views\DetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
+      <DependentUpon>*.xaml</DependentUpon>
     </Compile>
-    <Compile Update="MVVMWithIoCPage.xaml.cs">
-      <DependentUpon>MVVMWithIoCPage.xaml</DependentUpon>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPagexaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
     </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\MainPagexaml.cs">
+      <DependentUpon>..\*.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DetailPage.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="2.4.0.282" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.2.20" />
+    <PackageReference Include="Unity" Version="4.0.1" />
+    <PackageReference Include="Microsoft.NETCore.Portable.Compatibility" Version="1.0.1" />
+    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommonRepository\CommonRepository\CommonRepository.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="Behaviors\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Views\" />
+    <Folder Include="Navigations\" />
   </ItemGroup>
 </Project>

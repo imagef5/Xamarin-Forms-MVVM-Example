@@ -17,8 +17,8 @@ namespace MVVMWithIoC.ViewModels
         /// <returns><c>true</c>, if property was set, <c>false</c> otherwise.</returns>
         /// <param name="backingStore">Backing store.</param>
         /// <param name="value">Value.</param>
-        /// <param name="propertyName">Property name.</param>
         /// <param name="onChanged">On changed.</param>
+        /// <param name="propertyName">Property name.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         protected bool SetProperty<T>(
             ref T backingStore, T value,
