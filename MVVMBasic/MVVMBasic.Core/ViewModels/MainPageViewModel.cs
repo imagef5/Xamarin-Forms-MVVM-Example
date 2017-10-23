@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MVVMBasic.Interfaces;
 using MVVMBasic.Views;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
 
 namespace MVVMBasic.ViewModels
 {
@@ -43,18 +44,7 @@ namespace MVVMBasic.ViewModels
         /// 사용자 리스트
         /// </summary>
         /// <value>The users.</value>
-        public List<User> Users
-        {
-            get
-            {
-                return _users;
-            }
-            set
-            {
-                _users = value;
-                OnPropertyChanged();
-            }
-        }
+        public ObservableCollection<User> Users { get; set; } = new ObservableCollection<User>();
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="T:MVVMBasic.ViewModels.MainPageViewModel"/> is busy.
@@ -144,7 +134,8 @@ namespace MVVMBasic.ViewModels
             IsBusy = true;
             try
             {
-                Users = await _userService.GetUsersAsync();
+                var users = await _userService.GetUsersAsync();
+                users?.ForEach(Users.Add);
             }
             finally
             {
