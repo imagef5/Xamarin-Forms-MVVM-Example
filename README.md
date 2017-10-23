@@ -4,7 +4,7 @@ Xamarin Forms 를 이용한 MVVM 예제
 > 이미지 로딩을 위한 FFImageLoading.Forms 을 공통적으로 참조
 
 # 1. MVVMBasic
-- 가장기본적인 방법으로 MVVM 을 구현하는 코드 작성
+- 기본적인 방법으로 MVVM 을 구현하는 코드 작성
 - 간단한 Navigation Service 구현 - INavigationService  인터페이스 구현
 - Passing Argiments 를 통한 Viewmodel Constructor Argument 전달
 ```
@@ -21,15 +21,13 @@ viewmodel c# code :
 ....
 
 xaml 파일 :
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:local="clr-namespace:MVVMBasic"
+<ContentPage 
+    ...
     xmlns:viewmodel="clr-namespace:MVVMBasic.ViewModels"
     xmlns:navigation="clr-namespace:MVVMBasic.Navigations"
     xmlns:repoServices="clr-namespace:CommonRepository.Services;assembly=CommonRepository"
-    xmlns:behaviors="clr-namespace:MVVMBasic.Behaviors"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-    x:Class="MVVMBasic.MainPage">
+    ...
+    >
     <!-- ViewModel Binding -->
     <ContentPage.BindingContext>
         <viewmodel:MainPageViewModel >
@@ -75,15 +73,16 @@ App.cs 파일
     
 App.xaml 파일
 ...
-<Application xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<Application 
+    ...
     xmlns:viewmodels="clr-namespace:MVVMWithIoC.ViewModels"
-    x:Class="MVVMWithIoC.App">
+    ...
+    >
 	<Application.Resources>
 		<!-- Application resource dictionary -->
-        <ResourceDictionary>
-            <viewmodels:ViewModelLocator x:Key="Locator"/>
-        </ResourceDictionary>
+		<ResourceDictionary>
+		    <viewmodels:ViewModelLocator x:Key="Locator"/>
+		</ResourceDictionary>
 	</Application.Resources>
 </Application>
 
