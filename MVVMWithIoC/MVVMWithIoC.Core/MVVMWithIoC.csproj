@@ -4,7 +4,11 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <PackageTargetFallback>$(PackageTargetFallback);portable-win+net45+wp8+win81+wpa8</PackageTargetFallback>
   </PropertyGroup>
-
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\DetailPage.xaml" />
+    <EmbeddedResource Remove="Views\MainPage.xaml" />
+    <EmbeddedResource Remove="App.xaml" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="Views\MainPage.xaml" />
